@@ -12,7 +12,15 @@
     "spider",
     "crawler"
   ],
-  "main": "./index.js",
+  "license" : "GPLv3",
+  "bin": {
+    "peterparker": "./bin/peterparker.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Vosie/PeterParker.git"
+  },
+  "main": "./libs/peter-parker.js",
   "engines": {
     "node": ">= 0.8.0"
   },

@@ -54,7 +54,7 @@
     "type": "link"
   },
   "flagImageURL": {
-    "selector": "table.infobox td.maptable a.image img[alt*='flag']",
+    "selector": "table.infobox td.maptable:first-child a.image img",
     "type": "attr",
     "attr": "src"
   },

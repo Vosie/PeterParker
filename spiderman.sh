@@ -10,7 +10,7 @@ checkFile () {
 }
 
 sendPeterParker () {
-  node --expose_gc index.js $1 $2 $3
+  node --expose_gc bin/peterparker.js $1 $2 $3 $4
 }
 
 runLine () {
@@ -20,10 +20,10 @@ runLine () {
   then
     echo ">>>>> $1 already parsed to $target"
   else
-    sendPeterParker $1 $3 $target
+    sendPeterParker $1 $3 $target $5
   fi
 }
 
 while read line; do
-  runLine $line $2 $3
+  runLine $line $2 $3 $4
 done < $1
