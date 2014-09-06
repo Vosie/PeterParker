@@ -1,0 +1,85 @@
+{
+  "wikiUrl": {
+    "type": "argv",
+    "index": 2
+  },
+  "name": {
+    "selector": "div[role='main'] .firstHeading > span",
+    "type": "attr",
+    "attr": "textContent"
+  },
+  "lang": {
+    "selector": "div[role='main'] .firstHeading",
+    "type": "attr",
+    "attr": "lang"
+  },
+  "shortDesc": {
+    "selector": {
+      "base": "div[role='main'] .mw-body-content .toc",
+      "filter": "prevAll",
+      "subSelector": "p",
+      "reverse": true
+    },
+    "type": "attrs",
+    "attr": "textContent",
+    "subParsers": [{
+      "condition": "if-empty",
+      "selector": "div[role='main'] .mw-body-content p",
+      "type": "attrs",
+      "attr": "textContent"
+    }]
+  },
+  "imagePageURL": {
+    "selector": "table.infobox td > a[href*='/wiki/File:'].image",
+    "type": "link"
+  },
+  "imageURL": {
+    "selector": "table.infobox td > a[href*='/wiki/File:'].image img",
+    "type": "attr",
+    "attr": "src"
+  },
+  "otherLanguages": {
+    "selector": "div#p-lang ul li.interlanguage-link",
+    "type": "peter-parker",
+    "url": {
+      "selector": "a[lang]",
+      "type": "link"
+    },
+    "lang": {
+      "selector": "a[lang]",
+      "type": "attr",
+      "attr": "lang"
+    },
+    "config": {
+      "wikiUrl": {
+        "type": "parent-field",
+        "field": "url"
+      },
+      "name": {
+        "selector": "div[role='main'] .firstHeading > span",
+        "type": "attr",
+        "attr": "textContent"
+      },
+      "lang": {
+        "type": "parent-field",
+        "field": "lang"
+      },
+      "shortDesc": {
+        "selector": {
+          "base": "div[role='main'] .mw-body-content .toc",
+          "filter": "prevAll",
+          "subSelector": "p",
+          "reverse": true
+        },
+        "type": "attrs",
+        "attr": "textContent",
+        "subParsers": [{
+          "condition": "if-empty",
+          "selector": "div[role='main'] .mw-body-content p",
+          "type": "attrs",
+          "attr": "textContent"
+        }]
+      }
+    }
+  }
+}
